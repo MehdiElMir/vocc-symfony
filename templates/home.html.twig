@@ -1,0 +1,96 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Vocc - home{% endblock %}
+
+{% block body %}
+    <div class="home-banner">
+            <div class="container">
+                <div class="row home-row1">
+                    <div class="col-lg-6">
+                        <img class="banner_img" src="{{ asset('asset/img/banner_img.png') }}" alt="banner_img">
+                    </div>
+                    <div class="col-lg-6 banner_text">
+                        <p class="home-p1"><span>VOCC</span>  VOUS</p>
+                        <p class="home-p2">assiste à prendre soin de la</p>
+                        <p id="home-p3">voix de vos clients</p>
+                        <p id="home-p4">Plus de trois décennies d’expérience en contact avec les clients, 
+                        nous ont convaincus que les réclamations constituent le mur porteur 
+                        de la Relation Client et de son corollaire la Fidélisation.</p>
+                        <a href="#">> en savoir plus</a>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+        
+
+        <div class="home-c">
+            <div class="container">
+                <p>Toutes nos prestations sont basées sur le transfert de nos connaissances, méthodes, outils et expériences à nos clients car nous 
+                adhérons pleinement au principe socratique "le savoir est la seule matière qui s'accroît quand on la partage". Quatre domaines 
+                d'activités forment le socle de notre offre autour de la Satisfaction et l'Ecoute Client :</p>
+            </div>
+        </div>
+
+        <div class="container">
+            <div class="row">
+                <div class="col-md-3 hc">
+                    <img src="{{ asset('asset/img/logo1.png') }}" alt="logo1">
+                    <p class="home-ptitre">le conseil</p>
+                    <p class="home-pctn">La satisfaction client va plus loin que l’approche classique de la qualité, elle nécessite des méthodes pour tenir compte des émotions et de la subjectivité du client. Pour cela, nous avons développé une démarche spécifique que nous serons heureux de partager avec vous.</p>
+                </div>
+                <div class="col-md-3 hc">
+                    <img src="{{ asset('asset/img/logo2.png') }}" alt="logo2" style="margin-bottom:11px;">
+                    <p class="home-ptitre">la formation</p>
+                    <p class="home-pctn">Le calcul du retour sur investissement est la principale difficulté qu’ont les managers dans le traitement de l’insatisfaction. Nos formations apportent le savoir, savoir-faire et le savoir-être pour satisfaire le Client, le Collaborateur et … le Directeur Financier.</p>
+                </div>
+                <div class="col-md-3 hc">
+                    <img src="{{ asset('asset/img/logo3.png') }}" alt="logo3" style="margin-bottom:11px;">
+                    <p class="home-ptitre">externalisation</p>
+                    <p class="home-pctn">Votre cœur de métier personne d’autre que vous ne pourra mieux le maîtriser, consacrez y vos forces. Le traitement du client insatisfait est notre raison d’être, confiez nous vos réclamations.</p>
+                </div>
+                <div class="col-md-3 hc">
+                    <img src="{{ asset('asset/img/logo4.png') }}" alt="logo4" style="margin-bottom:11px;">
+                    <p class="home-ptitre" style="font-size:17px; margin-bottom:0; margin-top:15px">l'assistance à la maîtrise d'ouvrage</p>
+                    <p class="home-pctn">Nous apportons notre expertise pour assister les entreprises et les services utilisateurs à élaborer leur cahier des charges informatiques, choisir les solutions les mieux adaptées et mettre en place leur système d’information.</p>
+                </div>
+            </div>
+            <hr>
+        </div>
+
+        <div class="container">
+            <div class="row">
+                <div class="col-md-3 hc">
+                    <img src="{{ asset('asset/img/blog_img.png') }}" alt="blog_image">
+                    <p id="home-blog-text">et participez à la communauté
+                        de partage satisfaction 
+                        client-entreprise.</p>
+                </div>
+                <div class="col-md-5 home-col-bottom">
+                {{ form_start(form, {'attr': {'class' : 'needs-validation','novalidate': 'novalidate'}}) }}
+
+                <input type="email" 
+                            id="home-email-text"
+                            name="{{ field_name(form.email) }}"
+                            value="{{ field_value(form.email) }}"
+                            placeholder="votre email ..."
+                             
+                            required>
+                            <div class="invalid-feedback">Please enter a valid email</div>
+                        <button type="submit"><img src="{{ asset('asset/img/messagerie_logo.png') }}" alt="message"></button>
+                    {{ form_end(form) }}
+
+                    <p class="home-t1">Inscriver-vous à</p>
+                    <p class="home-t2">Notre newsletter</p>
+                    
+                
+
+                </div>
+                <div class="col-md-4 home-col-bottom">
+                    <img src="{{ asset('asset/img/logo5.png') }}" alt="" srcset="">
+                    <p class="home-t1">Recevez gratuitement</p>
+                    <p class="home-t2">un de nos livres</p>
+                </div>
+            </div>
+        </div>
+{% endblock %}

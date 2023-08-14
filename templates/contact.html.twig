@@ -1,0 +1,96 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Vocc - contact{% endblock %}
+{% block body %}
+
+    <div class="apropos-banner align-items-center">
+        <div class="container">
+            <p id="apropos-title">contact</p>
+        </div>
+    </div>
+
+        <div class="container contact-c1">
+            <div class="row">
+                <div class="col-lg-6">
+                    {% for message in app.flashes('notice') %}
+
+                        <div class="alert alert-info" role="alert">
+                            {{ message }}
+                        </div>
+                    {% endfor %}
+                    
+                    {{ form_start(form, {'attr': {'class' : 'needs-validation','novalidate': 'novalidate'}}) }}
+                    
+                        <div class="input-group mb-3">
+                            <span class="input-group-text" id="basic-addon1"><img src="{{asset('asset/img/contact_name_logo.png')}}" alt="name_logo"></span>
+                            <input
+                            name="{{ field_name(form.username) }}"
+                            value="{{ field_value(form.username) }}"
+                            placeholder="{{ field_label(form.username) }}"
+                            type="text" class="form-control" 
+                            required>
+                        </div>
+                        <div class="input-group mb-3">
+                            <span class="input-group-text" id="basic-addon2"><img src="{{asset('asset/img/contact_mail_logo.png')}}" alt="mail_logo"></span>
+                            <input type="email" class="form-control" 
+                            name="{{ field_name(form.email) }}"
+                            value="{{ field_value(form.email) }}"
+                            placeholder="{{ field_label(form.email) }}"
+                            class="form-control" 
+                            required>
+                            <div class="invalid-feedback">Please enter a valid email</div>
+                        </div>
+                        <div class="input-group mb-3">
+                            <span class="input-group-text align-items-start"id="basic-addon3"><img src="{{asset('asset/img/contact_message_logo.png')}}" alt="message_logo"></span>
+                            <textarea class="form-control"
+                            name="{{ field_name(form.message) }}"
+                            value="{{ field_value(form.message) }}"
+                            placeholder="{{ field_label(form.message) }}"
+                            class="form-control" required></textarea>
+                        </div>
+                        <button type="submit" class="btn contact-btn">Envoyer</button>
+
+                    {{ form_end(form) }}
+                </div>
+                <div class="col-lg-6 contact_info">
+                    <div class="row">
+                        <div class="col-1">
+                            <img src="{{asset('asset/img/localisation.png')}}" alt="localisation_logo">
+                        </div>
+                        <div class="col-auto">
+                            <span>Adresse : </span>
+                        </div>
+                        <div class="col contact_info_p1">
+                            <p>VOCC</p>
+                            <p>52 <b>BOULEVARD ZERKTOUNI </b>1er étage n° 03</p>
+                            <p><b>casablanca 20000 ,</b> Maroc</p>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-1">
+                            <img src="{{asset('asset/img/phone.png')}}" alt="phone_logo">
+                        </div>
+                        <div class="col-auto">
+                            <span>Tél / Fax : </span>
+                        </div>
+                        <div class="col contact_info_p2">
+                            <p> (+212) (0) 522 53 94 30</p>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-1">
+                            <img src="{{asset('asset/img/mail.png')}}" alt="mail_logo">
+                        </div>
+                        <div class="col-auto">
+                            <span>Email&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;: </span>
+                        </div>
+                        <div class="col contact_info_p2">
+                            <p> contact@<b>vocc.ma</b></p>
+                           
+                
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+{% endblock %}

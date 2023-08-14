@@ -1,0 +1,44 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Vocc - formations{% endblock %}
+
+{% block body %}
+    <div class="formations_banner">
+        <div class="container">
+            <h1>formations</h1>
+        </div>
+    </div>
+
+    <div class="container">
+        
+        {% for formation in formations %}
+        <div class="row formations_row">
+            <div class="col-lg-8">
+            
+                <div class="row">
+                    <div class="col-auto">
+                        <p class="formations_p1">{{ formation.reference }} <span class="formations_first_span">01</span></p>
+                    </div>
+                    <div class="col-10">
+                        <p class="formations_p2">{{ formation.title }}</p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-4 justify-content-end">
+                <div class="row justify-content-end formations_btn_row">
+                    <div class="col-auto">
+                        <button type="button" class="btn shadow button_frm1"><a class="formationlink" href="{{ path('formationDetails',{id : formation.id}) }}">Consulter</a></button>
+                    </div>
+                    <div class="col-auto">
+                        <button type="button" class="btn shadow button_frm2"><a class="formationlink" href="{{ path('inscription',{id : formation.id}) }}">S' inscrire</a></button>
+                    </div>
+                </div>
+            </div>
+            
+                
+
+        </div>
+        <hr>
+        {% endfor %}
+    </div>
+{% endblock %}

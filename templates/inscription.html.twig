@@ -1,0 +1,279 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Inscription {% endblock %}
+
+{% block body %}
+
+    <div class="formations_banner">
+        <div class= "container">
+            <h1>FORMATION</h1>
+        </div>
+    </div>
+
+    <div class="container ">
+        <div class="titre-inscription">
+            <h4>Inscription</h4>
+        </div>
+
+        <div class="formulaire ">
+            {{ form_start(form, {'attr': {'class' : 'needs-validation','novalidate': 'novalidate'}}) }}
+                <div class="justify-content-center">
+                    <div class="row row-align-end mt-3">
+                        
+                        
+                        <div class="col-4"> 
+                            <p><span>*</span>Prénom et nom:</p>
+                        </div>
+
+                        <div class="col-5">
+                            <input type="text"  class="form-control"
+                            name="{{ field_name(form.nom_et_prenom) }}"
+                            value="{{ field_value(form.nom_et_prenom) }}"
+                            placeholder="{{ field_label(form.nom_et_prenom) }}" required>
+                            <div class="invalid-feedback">Veuillez saisir ce champ.</div>
+                        </div>
+
+                    </div>
+                    <div class="row mt-3">
+                        
+                        <div class="col-4 "> 
+                            <p><span>*</span>Fonction:</p>
+                        </div>
+
+                        <div class="col-5">
+                            <input type="text" class="form-control" 
+                            name="{{ field_name(form.fonction) }}"
+                            value="{{ field_value(form.fonction) }}"
+                            placeholder="{{ field_label(form.fonction) }}" required>
+                            <div class="invalid-feedback">Veuillez saisir ce champ.</div>
+                        </div>
+                        
+                    </div>
+                    <div class="row mt-3">
+                        
+                        <div class="col-4 "> 
+                            <p><span>*</span>Téléphone:</p>
+                        </div>
+
+                        <div class="col-5 ">
+                            <input type="text" class="form-control"
+                            name="{{ field_name(form.telephone) }}"
+                            value="{{ field_value(form.telephone) }}"
+                            placeholder="{{ field_label(form.telephone) }}" required>
+                            <div class="invalid-feedback">Veuillez saisir ce champ.</div>
+                        </div>
+                        
+                    </div>
+                    <div class="row mt-3">
+                        
+                        <div class="col-4 "> 
+                            <p><span>*</span>Email:</p>
+                        </div>
+
+                        <div class="col-5 ">
+                            <input type="text" class="form-control"
+                            name="{{ field_name(form.email) }}"
+                            value="{{ field_value(form.email) }}"
+                            placeholder="{{ field_label(form.email) }}" required>
+                            <div class="invalid-feedback">Veuillez saisir ce champ.</div>
+                        </div>
+                        
+                    </div>
+                    <div class="row mt-3">
+                        
+                        <div class="col-4 "> 
+                            <p><span>*</span>Réseaux sociaux:</p>
+                        </div>
+
+                        <div class="col-5 ">
+                            <input type="text" class="form-control"
+                            name="{{ field_name(form.reseaux_sociaux) }}"
+                            value="{{ field_value(form.reseaux_sociaux) }}"
+                            placeholder="{{ field_label(form.reseaux_sociaux) }}" required>
+                            <div class="invalid-feedback">Veuillez saisir ce champ.</div>
+                        </div>
+                        
+                    </div>
+                    <div class="row mt-3">
+                        
+                        <div class="col-4 "> 
+                            <p><span>*</span>Adresse:</p>
+                        </div>
+
+                        <div class="col-5 ">
+                            <input type="text" class="form-control"
+                            name="{{ field_name(form.adresse) }}"
+                            value="{{ field_value(form.adresse) }}"
+                            placeholder="{{ field_label(form.adresse) }}" required>
+                            <div class="invalid-feedback">Veuillez saisir ce champ.</div>
+                        </div>
+                        
+                    </div>
+                    <div class="row mt-3">
+                        
+                        <div class="col-4 "> 
+                            <p><span>*</span>Code postal:</p>
+                        </div>
+
+                        <div class="col-5 ">
+                            <input type="text" class="form-control"
+                            name="{{ field_name(form.code_postal) }}"
+                            value="{{ field_value(form.code_postal) }}"
+                            placeholder="{{ field_label(form.code_postal) }}" required>
+                            <div class="invalid-feedback">Veuillez saisir ce champ.</div>
+                        </div>
+                        
+                    </div>
+                    <div class="row mt-3">
+                        
+                        <div class="col-4 "> 
+                            <p><span>*</span>Ville:</p>
+                        </div>
+
+                        <div class="col-5 ">
+                            <input type="text" class="form-control"
+                            name="{{ field_name(form.ville) }}"
+                            value="{{ field_value(form.ville) }}"
+                            placeholder="{{ field_label(form.ville) }}" required>
+                            <div class="invalid-feedback">Veuillez saisir ce champ.</div>
+                        </div>
+                        
+                    </div>
+                    <div class="row mt-3">
+                        
+                        <div class="col-4 "> 
+                            <p><span>*</span>Pays:</p>
+                        </div>
+
+                        <div class="col-5 ">
+                            <input type="text" class="form-control"
+                            name="{{ field_name(form.pays) }}"
+                            value="{{ field_value(form.pays) }}"
+                            placeholder="{{ field_label(form.pays) }}" required>
+                            <div class="invalid-feedback">Veuillez saisir ce champ.</div>
+                        </div>
+                        
+                    </div>                    
+                    <div class="row mt-3">
+                        
+                        <div class="col-4 "> 
+                            <p><span>*</span>Formation choisie :</p>
+                        </div>
+
+                        <div class="col-5 inscription_select_col">
+
+                            <select id="select_test" name="{{ field_name(form.formation) }}" class="form-control" required>
+                                <option value="" disabled selected>---sélectionnez une formation</option>
+                            
+                                {% for label, value in field_choices(form.formation) %}
+                                    <option value="{{ value }}">{{ label }}</option>
+                                {% endfor %}
+                            </select>
+                            
+                            <button type="button" class="inscription_drop_btn"><img src="{{asset('asset/img/select_icon.png')}}" alt="select_icon"></button>
+                        </div>
+                        
+                    </div>
+                    <div class="row mt-3">
+                        
+                        <div class="col-4 "> 
+                            <p><span>*</span>Choisir une date :</p>
+                        </div>
+                        <div class="col-1  inscription_select_col">
+                        <select id="select_test"  id="select_test" name="{{ field_name(form.jour) }}" class="form-control" required>
+                            <option value="">dd</option>
+                        
+                            {% for label, value in field_choices(form.jour) %}
+                                <option value="{{ value }}">{{ label }}</option>
+                            {% endfor %}
+                        </select>
+                            <button type="button" class="inscription_drop_btn"><img src="{{asset('asset/img/select_icon.png')}}" alt="select_icon"></button>
+                        </div>
+                        <div class="col-1 inscription_select_col">
+                        <select id="select_test"  id="select_test" name="{{ field_name(form.mois) }}" class="form-control" required>
+                            <option value="">mm</option>
+                        
+                            {% for label, value in field_choices(form.mois) %}
+                                <option value="{{ value }}">{{ label }}</option>
+                            {% endfor %}
+                        </select>
+                            <button type="button" class="inscription_drop_btn"><img src="{{asset('asset/img/select_icon.png')}}" alt="select_icon"></button>
+                        </div>
+                        <div class="col-3 inscription_select_col">
+                            <select id="select_test"  id="select_test" name="{{ field_name(form.annee) }}" class="form-control" required>
+                                <option value="">aaaa</option>
+                            
+                                {% for label, value in field_choices(form.annee) %}
+                                    <option value="{{ value }}">{{ label }}</option>
+                                {% endfor %}
+                            </select>
+                            <button type="button" class="inscription_drop_btn"><img src="{{asset('asset/img/select_icon.png')}}" alt="select_icon"></button>
+                        </div>
+                        <div class="invalid-feedback">Veuillez saisir ce champ.</div>
+                        
+                    </div>
+                    <div class="row mt-3">
+                        
+                        <div class="col-4 "> 
+                            <p><span>*</span>Prénom et nom1:</p>
+                        </div>
+
+                        <div class="col-5 ">
+                            <input type="text" class="form-control"
+                            name="{{ field_name(form.prenom_et_nom1) }}"
+                            value="{{ field_value(form.prenom_et_nom1) }}"
+                            placeholder="{{ field_label(form.prenom_et_nom1) }}" required>
+                            <div class="invalid-feedback">Veuillez saisir ce champ.</div>
+                        </div>
+                        
+                    </div>
+                    <div class="row mt-3">
+                        
+                        <div class="col-4 "> 
+                            <p><span></span>Prénom et nom2:</p>
+                        </div>
+
+                        <div class="col-5 ">
+                            <input type="text" class="form-control"                            
+                            name="{{ field_name(form.prenom_et_nom2) }}"
+                            value="{{ field_value(form.prenom_et_nom2) }}"
+                            placeholder="{{ field_label(form.prenom_et_nom2) }}"
+                            >
+                        </div>
+                        
+                    </div>
+                    <div class="row mt-3">
+                        
+                        <div class="col-4"> 
+                            <p><span></span>Prénom et nom3:</p>
+                        </div>
+
+                        <div class="col-5">
+                            <input type="text" class="form-control"
+                            name="{{ field_name(form.prenom_et_nom3) }}"
+                            value="{{ field_value(form.prenom_et_nom3) }}"
+                            placeholder="{{ field_label(form.prenom_et_nom3) }}">
+                        </div>
+                        
+                    </div>
+                    <div class="row last-p">
+                    <div class="col-lg-4"></div>
+                        <div class="col-5">                        
+                        <p><span>*</span>Données obligatoire</p>
+                        </div> 
+                    </div> 
+                    <div class="row btn-ins">
+                        <div class="col-4"></div>
+                        <div class="col-5  ">
+                        <button class="submit-button2">Envoyer</button>
+                        </div>
+                    </div>
+
+                </div>
+            {{ form_end(form) }}
+        </div>      
+    </div>
+
+    
+
+{% endblock %}

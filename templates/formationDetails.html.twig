@@ -1,0 +1,47 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Vocc - formations{% endblock %}
+
+{% block body %}
+    <div class="formations_banner">
+        <div class="container">
+            <h1> Formation Details </h1>
+        </div>
+    </div>
+
+    <div class="container">
+        <div class="row details-row">
+            <div class="col-lg-8">
+                <div class="card shadow details_card">
+                    <div class="card-body">
+                        <h5 class="card-title formations_p2">Nom de la formation :</h5>
+                        <p class="card-text apropos-paragraph">{{ formation.title }}</p>
+                        <h5 class="card-title formations_p2">Description :</h5>
+                        <p class="card-text apropos-paragraph">{{ formation.description }}</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-lg-4">
+                <div class="card shadow details_card">
+                    <div class="card-body">
+                        <h5 class="card-title formations_p2">heures totales :</h5>
+                        <p class="card-text apropos-paragraph">{{ formation.hours }} h</p>
+                        <h5 class="card-title formations_p2">listes des modules :</h5>
+                        
+                        <ul class="list-group list-group-flush">
+                        {% if formation.modules is same as(null) %}
+                            <li class="list-group-item"> Aucun module à afficher</li>
+                        {% else %}
+                            {% for module in formation.modules %}
+                                <li class="list-group-item">{{ module.title }}</li>
+                            {% endfor %}
+                        {% endif %}
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+{% endblock %}

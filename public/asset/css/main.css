@@ -1,0 +1,668 @@
+@font-face {
+    font-family: FVAlmelo;
+    src: url('../fonts/FVAlmelo.woff') format('woff');
+    font-weight: 300;
+    font-style: normal;
+  }
+  
+  @font-face {
+    font-family: Museo-900;
+    src: url('../fonts/Museo-9OO.woff') format('woff');
+    font-style: normal;
+  }
+  
+  @font-face {
+    font-family: MuseoSans-300;
+    src: url('../fonts/MuseoSans-300.woff') format('woff');
+    font-style: normal;
+  }
+  
+  @font-face {
+    font-family: NettoOT;
+    src: url('../fonts/NettoOT.woff') format('woff');
+    font-style: normal;
+  }
+  
+  @font-face {
+    font-family: NettoOTBold;
+    src: url('../fonts/NettoOTBold.woff') format('woff');
+    font-style: normal;
+  }
+  
+  @font-face {
+    font-family: OpenSans;
+    src: url('../fonts/OpenSans.woff') format('woff');
+    font-weight: 300;
+    font-style: normal;
+  }
+  
+  @font-face {
+    font-family: OpenSansBold;
+    src: url('../fonts/OpenSansBold.woff') format('woff'); 
+    font-style: normal;
+  }
+
+
+  
+  body{
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+  }
+  
+  footer{
+    margin-top: auto;
+  }
+  
+  h1{
+    font-family: OpenSansBold;
+  }
+
+  
+  /* ---------------Header and footer css  */
+  .links{
+    background-image: url("../img/nav_background.jpg");
+    background-size: cover;
+    background-color: #67021f;
+    height: 116px;
+    padding-right: 59px;
+    padding-left: 40px;
+  }
+  .links > li {
+    padding-top: 50px;
+    list-style: none;
+  }
+  header{
+    position: relative;
+    padding: 0 2rem;
+  }
+  .links > li > a{
+    text-decoration: none;
+    color: white;
+    font-size: 14px;
+    font-family: NettoOTBold;
+    text-transform: uppercase;
+  }
+  .links > li > a:hover{
+    color: #f23364;
+  }
+
+  .custom-navbar{
+    height: 100px;
+    width: 100%;
+    margin: 0 auto;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+
+  .custom-navbar .links{
+    display: flex;
+    gap: 2rem;
+  }
+
+  .custom-navbar .toggle_btn{
+    display: none;
+    cursor: pointer;
+  }
+  /* DropDown menu */
+  .dropdown_menu{
+    display: none;
+    position: absolute;
+    right: 0;
+    height: 0;
+    z-index: 8;
+    /* PADDING: 2REM; */
+    width: 100%;
+    background-color: #67021f;
+    backdrop-filter: blur(50px);
+    border-radius: 10px;
+    overflow: hidden;
+    transition: height 0.2s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+  }
+  .dropdown_menu.open{
+    height: FIT-CONTENT;
+  }
+  .dropdown_menu > ul > li{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    list-style: none;
+  }
+  .dropdown_menu > ul > li > a{
+    padding-top: 40px;
+    text-decoration: none;
+    color: white;
+    font-size: 14px;
+    font-family: NettoOTBold;
+    text-transform: uppercase;
+  }
+
+  /* Responsiv for navbar */
+  @media(max-width:1032px){
+    .custom-navbar > .links{
+      display: none;
+    }
+    .custom-navbar > .toggle_btn{
+      display: block;
+    }
+    .dropdown_menu{
+      display: block;
+    }
+  }
+  @media(max-width: 576px){
+    .dropdown_menu{
+      left: 2rem;
+      width: 100%;
+    }
+  }
+
+  
+  
+  li > a{
+    font-family: NettoOTBold;
+    margin-left: 40px;
+  }
+  
+  #footer_logo{
+    height: 60px;
+    width: 150px;
+    float: left;
+  }
+
+  #copyright{
+    font-size: 15px;
+    font-family: OpenSans;
+    color: #787878;
+  }
+  #realisee{
+    font-size: 15px;
+    font-family: OpenSans;
+    color: #787878;
+  }
+
+  /* --------------------main content  */
+   .banner_img{
+    margin-top: 20px;
+    margin-bottom: 20px;
+    /* margin-left: 150px; */
+    /* margin-right: 30px; */
+   }
+   .home-banner{
+    background-color: #bb083c;
+    /* clip-path: polygon(25% 0%, 100% 0%, 75% 100%, 0% 100%); */
+   }
+   .banner_text > a{
+    margin-bottom: 20px;
+   }
+   
+   .home-p1{
+    margin-top: 40px;
+    margin-bottom: 0;
+    font-family: NettoOT;
+    color: white;
+    font-weight: lighter;
+    font-size: 20px;
+   }
+   .home-p2{
+    margin-bottom: 0;
+    font-family: NettoOT;
+    color: white;
+    font-weight: lighter;
+    font-size: 20px;
+   }
+   .home-p1 > span{
+    font-size: 30px;
+    color: white;
+    font-family: NettoOT;
+    font-weight: bold;
+   }
+   #home-p3{
+    font-family: FVAlmelo;
+    color:#67021f;
+    font-size: 40px;
+   }
+   #home-p4{
+    font-family: OpenSans;
+    color: white;
+    font-size: 14px;
+   }
+   .home-row1 > div > a{
+    color: white;
+    text-decoration: none;
+    text-transform: uppercase;
+    font-family: OpenSans;
+    font-size: 10px;
+    letter-spacing: 5px;
+   }
+   .home-c{
+    margin: 30px 50px 20px 50px;
+   }
+   .home-c > div > p{
+    font-family: OpenSans;
+    font-size: 12px;
+    color: #464646;
+   }
+   .hc{
+    text-align: center;
+  }
+  .home-ptitre{
+    color: #ff014a;
+    font-family: FVAlmelo;
+    font-size: 23px;
+    margin-top: 20px;
+  }
+  .home-pctn{
+    font-family: OpenSans;
+    font-size: 14px;
+    color: #464646;
+  }
+  #home-blog-text{
+    text-align: left;
+    font-family: OpenSans;
+    font-size: 12px;
+    color: #464646;
+  }
+  .home-col-bottom{
+    text-align: center;
+  }
+  .home-col-bottom > form{
+    margin-top:30px;
+  }
+  .home-col-bottom > form >input{
+    border-radius: 5px;
+  }
+  .home-col-bottom > form >button > img{
+    margin-bottom: 5px;
+  }
+  .home-col-bottom > form > button{
+    background-color: #ff014a;
+    border: none;
+    width: 35px;
+    border-radius: 5px;
+  }
+  .home-t1{
+    font-family: OpenSans;
+    font-size: 20px;
+    color: #7c7c7c;
+    margin-bottom: 0;
+    margin-top: 20px;
+  }
+  .home-t2{
+    font-family: OpenSans;
+    font-size: 20px;
+    font-weight: bold;
+    color: #ff014a;
+  }
+
+  
+
+
+  /*------------------------Interface A propos Css */
+.apropos-banner{
+    height: 66px;
+    background-color: #bb083c;
+    width: 100%;
+}
+#apropos-title{
+    margin-top: 15px;
+    color: white;
+    font-size: 22px;
+    font-weight: bold;
+    font-family: OpenSans;
+    text-transform: uppercase;
+  }
+.apropos-first-container{
+    margin-top: 50px;
+    margin-bottom: 25px;
+}
+
+.apropos-paragraph{
+  text-align: justify;
+  font-family: OpenSans;
+  color: #787878;
+  line-height: 20pt;
+}
+
+.apropos-second-container{
+  background-color: #f7f7f7;
+  border-radius: 10px;
+}
+.custom-span{
+  color: #545454;
+  font-weight: bold;
+  font-family: openSans;
+}
+.apropos-second-text{
+  color: #f23364;
+  font-family: OpenSans;
+  margin-bottom: 5px;
+}
+#apropos-top-hr{
+  margin-bottom: 10px;
+}
+#apropos-bottom-hr{
+  margin-top: 10px;
+}
+.custom-approche{
+  margin-top: 50px;
+  margin-bottom: 40px;
+}
+.custom-approche>p{
+  color: #f21555;
+  font-family: OpenSans;
+  font-weight: bold;
+  font-size: 22px;
+}
+.p > p{
+  color: #a8a8a8;
+  font-family: OpenSans;
+  font-size: 14px;
+  line-height: 20pt;
+}
+.marks-p{
+  color: #a8a8a8;
+  font-family: OpenSans;
+  font-size: 14px;
+}
+.custom-c{
+  margin-left: 60px;
+}
+
+/* -------------Interfaces contact CSS ------- */
+.contact-c1{
+  margin-top: 93px;
+}
+#basic-addon1{
+  background-color: #f21555;
+}
+#basic-addon2{
+  background-color: #f21555;
+}
+
+#basic-addon3{
+  background-color: #f21555;
+  height: 250px;
+}
+.contact-btn{
+  background-color: #f21555;
+  color: white;
+  float: right;
+  width: 120px;
+}
+.contact_info > div > div > span{
+  color: #f21555;
+  font-weight: bold;
+  font-family: Open Sans;
+  font-size: 14px;
+}
+.contact_info_p2{
+  position: relative;
+}
+#drop_btn {
+  border-radius: 5px;
+  background-color: rgb(242, 21, 85);
+  box-shadow: inset 0px -4px 0px 0px rgba(31, 30, 28, 0.12);
+  width: 39px;
+  height: 38px;
+  position: absolute;
+  bottom: 0;
+  right: 10px;
+  border: none;
+}
+
+.contact_info_p1 > p{
+  font-family: Open Sans;
+  text-transform: uppercase;
+  font-size: 14px;
+  color: #a0a0a0;
+}
+.contact_info_p2 > p{
+  color: #a0a0a0;
+  font-size: 14px;
+  font-family: Open Sans;
+}
+
+.form-control.error input{
+  border-color: red;
+}
+
+.form-control.success input{
+  border-color: green;
+}
+/* -----------Interface formations  */
+
+.formations_banner{
+  height: 66px;
+  background-color: #bb083c;
+  width: 100%;
+}
+.formations_banner > div > h1{
+  margin-top: 15px;
+  color: white;
+  font-size: 22px;
+  font-weight: bold;
+  font-family: OpenSans;
+  text-transform: uppercase;
+}
+.formations_row{
+  margin-top: 90px;
+}
+.formations_btn_row{
+  text-align: right;
+
+}
+.formations_btn_row > div > .button_frm1{
+  text-decoration: none;
+  width: 125px;
+  background-color: #878787;
+  color: white;
+  font-family: Open Sans;
+  font-weight: 500;
+}
+.formations_btn_row > div > .button_frm2{
+  text-decoration: none;
+  width: 125px;
+  background-color: #ff014a;
+  color: white;
+  font-family: Open Sans;
+  font-weight: 500;
+}
+.formations_p1{
+  font-family: FVAlmelo;
+  font-weight: 500;
+  font-size: 15px;
+  color: #afafaf;
+  text-transform: uppercase;
+}
+.formations_first_span{
+  font-family: FVAlmelo;
+  font-weight: 500;
+  font-size: 15px;
+  color: #c6c6c6;
+  text-transform: uppercase;
+}
+.formations_p2{
+  color: #bb083c;
+  font-size: 17px;
+  font-family: Open Sans;
+  font-weight: 800;
+
+}
+.formation_col_btn{
+  text-align: right;
+}
+
+.formationlink{
+  text-decoration: none;
+  color: white;
+}
+
+/*----------------------------------------inscription*/
+
+.titre-inscription{
+  margin-top: 42px;
+  margin-bottom: 42px;
+  margin-left: 38px;
+  font-size: 14px;
+  color: #f21555;
+  font-family: OpenSans;
+  font-weight: bold;
+  text-transform: uppercase;
+  
+}
+.formulaire{
+  margin-left: 30px;
+  margin-right: 30px;
+}
+.formulaire span{
+  color: #ff014a;
+}
+.formulaire  p{
+ text-align: right;
+}
+.btn-ins{
+ 
+  min-height: 38px;
+  font-size: 14px;
+  text-align: right;
+
+}
+
+.last-p{
+ text-align: right;
+  
+}
+.submit-button2{
+background-color: #ff014a;
+min-height: 38px;
+font-size: 14px;
+width: 122px;
+color: white;
+border: none;
+border-radius: 10px;
+
+}
+
+.inscription_select_col{
+  position: relative;
+}
+.inscription_drop_btn {
+  border-radius: 5px;
+  background-color: rgb(242, 21, 85);
+  box-shadow: inset 0px -4px 0px 0px rgba(31, 30, 28, 0.12);
+  width: 39px;
+  height: 38px;
+  position: absolute;
+  bottom: 2px;
+  right: 10px;
+  pointer-events: none;
+  border: none;
+}
+/*-------------------------------------notre methode*/
+ 
+
+.methode-firt-paragraph{
+  font-size: 14px;
+  font-family: OpenSans;
+  color: #969696;
+  font-style: italic;
+  margin-top: 30px;
+
+}
+.span-methode-firt-paragraph{
+    color: #f21555;
+    font-weight: bold;
+}
+.methode-span{
+    color: #f21555;
+    font-family: FVAlmelo;
+    font-size: 18px;
+}
+.row-methode-2{
+    margin-top:30px ;
+    margin-bottom:30px ;
+    text-align:center;
+}
+#ps-methode{
+  font-size: 13px;
+  font-family: OpenSans;
+  color: #969696;
+  text-align: left;
+ 
+}
+
+.methode-title{
+    
+    font-family: FVAlmelo;
+    font-size: 16px;
+}
+.bold-text{
+    font-weight: bold;
+}
+
+/*----------------------------------presentation*/
+.rows-presentation{
+    margin-top:30px ;
+    margin-bottom:30px ;
+    text-align:center;
+    margin-right: 20px;
+    justify-content: center;
+    
+}
+
+.presentation-first-paragraph{
+    font-size: 16px;
+    font-family: Myriad;
+    color: #969696;
+    font-style: italic;
+    margin-top: 30px;
+   padding: 30px;
+  
+  }
+  .pre-title{
+    font-weight: bold;
+    font-family: FVAlmelo;
+    font-size: 16px; 
+    
+  }
+  #ps-presentation{
+    font-size: 13px;
+    font-family: OpenSans;
+    color: #969696;
+    text-align: left;
+   
+  }
+  #pre-suite{
+    font-size: 12px;
+    font-family: OpenSans;
+    color: #ff014a;
+    font-style: italic;
+  }
+  .separateur{
+    height: 210px;
+  }
+  .suite .img{
+    text-align: end;
+    justify-content: end;
+   
+  }
+.suite hr{
+    margin-right: 0;
+    margin-left: 40px;
+
+}
+
+/* Details of formation page */
+  
+.details-row{
+  margin-top: 50px;
+}
+
+.details_card{
+  margin-top: 20px;
+  background-color: #e4e4e4;
+}
+  
+  
+  

@@ -1,0 +1,19 @@
+parameters:
+    app.path.formulaires_attachments: /uploads/attachments
+
+vich_uploader:
+    db_driver: orm
+
+    metadata:
+        type: attribute
+
+    mappings:
+        formulaires_attachments:
+            uri_prefix: /uploads/attachments
+            upload_destination: '%kernel.project_dir%/public/uploads/attachments'
+            namer: vich_uploader.namer_hash
+
+            inject_on_load: true
+            delete_on_update: true
+            delete_on_remove: true
+
